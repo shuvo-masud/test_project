@@ -33,8 +33,8 @@ public class CheckYourTomorrow {
         panel.add(inputField, gbc);
 
         //BUTTONS
-        JButton drawButton = new JButton("DRAW");
-        JButton refreshButton = new JButton("REFRESH");
+        JButton drawButton = new JButton("Go");
+        JButton refreshButton = new JButton("↻");
 
         gbc.gridy = 3;
         panel.add(drawButton, gbc);
