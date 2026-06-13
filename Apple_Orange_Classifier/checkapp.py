@@ -4,7 +4,7 @@ import numpy as np
 from tensorflow import keras
 
 # Load model
-model = keras.models.load_model("apple_orange_model.keras")
+model = keras.models.load_model("fruit_classifier_v1.keras")
 
 img_size = (128, 128)
 
@@ -27,7 +27,19 @@ if uploaded_file is not None:
 
     prediction = model.predict(processed)[0][0]
 
-    if prediction > 0.5:
+    if prediction > 0.9993:
         st.success("Prediction: 🍊 Orange")
+        st.success(prediction)
+    elif prediction >= 0.8 and prediction <= 0.9993:
+        st.success("Prediction: Close to 🍊 Orange")
+        st.success(prediction)
+    elif prediction >= 0.2 and prediction < 0.8:
+        st.success("Prediction: ❓ Unknown")
+        st.success(prediction)
+    elif prediction >= 0.0007 and prediction < 0.2:
+        st.success("Prediction: Close to 🍎 Apple")
+        st.success(prediction)
+
     else:
         st.success("Prediction: 🍎 Apple")
+        st.success(prediction)
