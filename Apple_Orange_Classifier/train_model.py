@@ -86,5 +86,5 @@ loss, acc = model.evaluate(x_test, y_test)
 print("Accuracy:", acc)
 
 # ---------------- SAVE ----------------
-model.save("apple_orange_model.keras")
+model.save("fruit_classifier_v1.keras")
 print("Model saved successfully!")
